@@ -41,4 +41,4 @@ jobs:
         script: |
           cd /home/${{ secrets.EC2_USER }}/app
           npm install --production
-          pm2 restart app || pm2 start npm --name "app" -- start
+          node main.js
