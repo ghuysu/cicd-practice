@@ -41,4 +41,4 @@ jobs:
         script: |
           cd /home/${{ secrets.EC2_USER }}/app
           npm install --production
-          node main.js
+          node main.js &
