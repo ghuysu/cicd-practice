@@ -12,5 +12,6 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, () => {
+    console.log(`New deployment started`)
     console.log(`Server is running at http://localhost:${port}`);
 });
