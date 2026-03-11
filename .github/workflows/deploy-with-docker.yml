@@ -41,14 +41,6 @@ jobs:
 
       - name: Load and run Docker image on EC2
         run: |
-          ssh -i ~/.ssh/id_rsa ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
-            docker load -i /tmp/image.tar
-            docker stop sandbox-container || true
-            docker rm sandbox-container || true
-            docker run -d --name sandbox-container sandbox-app:${IMAGE_TAG}
-          EOF
-      - name: Load and run Docker image on EC2
-        run: |
           ssh -i ~/.ssh/id_rsa ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << EOF
             docker load -i /tmp/image.tar
             docker stop sandbox-container || true
