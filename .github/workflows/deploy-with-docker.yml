@@ -53,5 +53,5 @@ jobs:
             docker load -i /tmp/image.tar
             docker stop sandbox-container || true
             docker rm sandbox-container || true
-            docker run -d --name sandbox-container sandbox-app:${IMAGE_TAG}
+            docker run -d --name sandbox-container sandbox-app:${GITHUB_SHA}
           EOF
